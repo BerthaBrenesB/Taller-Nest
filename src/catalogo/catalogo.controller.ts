@@ -11,15 +11,15 @@ export class CatalogoController {
 
     @Get()
     @ApiOperation({ summary: 'Devuelve solamente el nombre y el id del postulante' })
-    @ApiResponse({ status: 200, type: Object })
+    @ApiResponse({ status: 200, type: Array })
     async obtenerArticulos(){
       return await this.catalogoService.obtenerTodo();
     }
 
     @Get('/:id')
-    @ApiQuery({ name: 'Postulant', type: Object })
-    @ApiParam({ name: 'postulantId' })
-    @ApiNotFoundResponse({ description: 'No se encuentra el postulante' })
+    //@ApiQuery({ name: 'Postulant', type: Object })
+    @ApiParam({ name: 'id',description:'Es el id del articulo' })
+    @ApiNotFoundResponse({ description: 'No se encuentra el articulo' })
     obtenerOne(@Param('id') id:string){
       return this.catalogoService.obtenerUnArticulo(id)
     }

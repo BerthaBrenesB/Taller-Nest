@@ -8,8 +8,8 @@ async function bootstrap() {
   app.enableCors();
 
   const options = new DocumentBuilder()
-    .setTitle('Postulant API')
-    .setDescription('Este API se utilizará para brindar acceso a los diferentes parámetros de configuración del Postulant')
+    .setTitle('Catalogo API')
+    .setDescription('Este API se utiliza para la realizacion del examen final')
     .setVersion('1.0')
     .build();
   
