@@ -5,8 +5,11 @@ import { appEntity } from "./app.entity";
 @EntityRepository(appEntity)
 export class AppRepository extends MongoRepository<appEntity>{
     async createArticulo(data: ArticuloDTO){
+        // declaracion
         const {descripcion, fecha,lugar,nombre,precio} = data;
+        //instancia
         const articulo = new appEntity();
+        //updates
         articulo.descripcion = descripcion;
         articulo.fecha = fecha;
         articulo.precio = precio;
